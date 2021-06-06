@@ -1,5 +1,5 @@
 name: apphud_example
-description: Demonstrates how to use the appHud plugin.
+description: Demonstrates how to use the Apphud plugin.
 
 # The following line prevents the package from being accidentally published to
 # pub.dev using `pub publish`. This is preferred for private packages.

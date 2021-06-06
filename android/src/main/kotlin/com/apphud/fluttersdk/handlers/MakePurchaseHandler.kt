@@ -3,6 +3,7 @@ package com.apphud.fluttersdk.handlers
 import android.app.Activity
 import com.apphud.sdk.Apphud
 import io.flutter.plugin.common.MethodChannel
+import android.util.Log
 
 
 class MakePurchaseHandler(override val routes: List<String>, val activity: Activity) : Handler {
@@ -61,7 +62,10 @@ class MakePurchaseHandler(override val routes: List<String>, val activity: Activ
     }
 
     private fun purchase(productId: String, result: MethodChannel.Result) {
+        Log.d("apphud_flutter", "purchase() was called")
         Apphud.purchase(activity, productId) { purchaseResult ->
+            Log.d("apphud_flutter", "purchase() result:")
+
             val resultMap = hashMapOf<String, Any?>()
 
             purchaseResult.subscription?.let {
